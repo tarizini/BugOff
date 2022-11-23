@@ -21,11 +21,16 @@ public class CharacterController : MonoBehaviour
 
     float rotationSpeed = 2.0f;
     float camRotationSpeed = 1.5f;
+
+    public float maxSprint = 5.0f;
+    float sprintTimer;
     
     void Start()
     {
         cam = GameObject.Find("Main Camera");
         myRigidbody = GetComponent<Rigidbody>();
+        sprintTimer = maxSprint = 5.0f;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
@@ -37,7 +42,15 @@ public class CharacterController : MonoBehaviour
         {
             myRigidbody.AddForce(transform.up * jumpForce);
         }
-
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            superSpeed = sprintSpeed;
+        }
+        else
+        {
+            maxSpeed = normalSpeed;
+        }
+      
         Vector3 newVelocity = (transform.forward * Input.GetAxis("Vertical") * maxSpeed) + (transform.right * Input.GetAxis("Horizontal") * maxSpeed);
         myRigidbody.velocity = new Vector3(newVelocity.x, myRigidbody.velocity.y, newVelocity.z);
         rotation = rotation + Input.GetAxis("Mouse X") * rotationSpeed;
