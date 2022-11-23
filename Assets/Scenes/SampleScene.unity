@@ -123,6 +123,42 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &164213967 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8728723278266805325, guid: 97f8dbef51b9c45a684c223defed9049, type: 3}
+  m_PrefabInstance: {fileID: 1699530788}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &164213971
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 164213967}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0, z: 0.010185437}
+  m_Center: {x: 0, y: -0.00026330719, z: 0.000092718205}
+--- !u!1 &546909578 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4340423644140328716, guid: 97f8dbef51b9c45a684c223defed9049, type: 3}
+  m_PrefabInstance: {fileID: 1699530788}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &546909582
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 546909578}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0, z: 0.010185437}
+  m_Center: {x: 0, y: -0.00077785726, z: 0.000092718205}
 --- !u!1 &666759392
 GameObject:
   m_ObjectHideFlags: 0
@@ -157,13 +193,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   superSpeed: 0
-  normalSpeed: 10
+  normalSpeed: 15
   sprintSpeed: 20
   groundChecker: {fileID: 1978146996}
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
-  jumpForce: 300
+  jumpForce: 450
+  maxSprint: 10
 --- !u!136 &666759394
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -237,7 +274,7 @@ Transform:
   m_GameObject: {fileID: 666759392}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 28.4, z: -56}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3.6163, y: 3.6163, z: 3.6163}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 963194228}
@@ -468,7 +505,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 97f8dbef51b9c45a684c223defed9049, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 97f8dbef51b9c45a684c223defed9049, type: 3}
       propertyPath: m_LocalPosition.z
@@ -505,6 +542,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 97f8dbef51b9c45a684c223defed9049, type: 3}
       propertyPath: m_Name
       value: World With a Fountain
+      objectReference: {fileID: 0}
+    - target: {fileID: 4340423644140328716, guid: 97f8dbef51b9c45a684c223defed9049, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8728723278266805325, guid: 97f8dbef51b9c45a684c223defed9049, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97f8dbef51b9c45a684c223defed9049, type: 3}
@@ -617,7 +662,7 @@ GameObject:
   - component: {fileID: 1905585427}
   - component: {fileID: 1905585426}
   - component: {fileID: 1905585425}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -727,7 +772,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1978146996}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.963, z: -0.012}
+  m_LocalPosition: {x: 0, y: -1.037, z: -0.012}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
