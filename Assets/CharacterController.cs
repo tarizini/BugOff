@@ -24,7 +24,6 @@ public class CharacterController : MonoBehaviour
 
     public float maxSprint = 5.0f;
     float sprintTimer;
-    
     void Start()
     {
         cam = GameObject.Find("Main Camera");
@@ -52,6 +51,7 @@ public class CharacterController : MonoBehaviour
         }
       
         Vector3 newVelocity = (transform.forward * Input.GetAxis("Vertical") * maxSpeed) + (transform.right * Input.GetAxis("Horizontal") * maxSpeed);
+
         myRigidbody.velocity = new Vector3(newVelocity.x, myRigidbody.velocity.y, newVelocity.z);
         rotation = rotation + Input.GetAxis("Mouse X") * rotationSpeed;
         transform.rotation = Quaternion.Euler(new Vector3(0.0f, rotation, 0.0f));
